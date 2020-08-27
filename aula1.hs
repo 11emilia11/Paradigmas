@@ -21,6 +21,7 @@ maxi x y | x >= y = x
          | x == y = x
          | otherwise = y
 
+
 maxi2 x y = if x > y then
                x
             else
@@ -36,6 +37,8 @@ vendas 2 = 5
 vendas 3 = 8
 vendas 4 = 10
 vendas 5 = 5
+
+
 
 -- total de vendas por casamento de padrao
 totalVendas :: Int -> Int
@@ -140,4 +143,26 @@ paraDireita n s | n == 0 = s
                 | otherwise = addEspacos(n-1) ++ paraDireita(n-1)(s)
 
 
+--menorMaior :: Int -> Int -> Int -> (Int, Int)
+--menorMaior a b c | (a > b) && (a > c) && (c < b) = (c, a)
+--                 | (b > a) && (b > c) && (c < a) = (c, b)
+
+
+
+
+--imprimeSemanas :: Int -> String
+--imprimeSemanas n | n == 0  = show(0) ++ show(vendas 0)
+--                 | n == 1 =  show(0) ++ show(vendas 0) ++ show(1) ++ show(vendas 1)
+--                 | otherwise = 
+
+
+--imprimeTabela :: Int -> String
+--imprimeTabela n =  cabecalho
+--                  ++ imprimeSemanas n
+--                  ++ imprimeTotal n
+--                  ++ imprimeMedia n 
+--             where cabecalho = "Semana " ++ "Venda"
+
+
+                
 
