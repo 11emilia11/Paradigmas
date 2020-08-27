@@ -1,3 +1,6 @@
+
+-- Exercicios da aula 1 
+
 resposta :: Int
 resposta = 42
 
@@ -34,18 +37,21 @@ vendas 3 = 8
 vendas 4 = 10
 vendas 5 = 5
 
-
+-- total de vendas por casamento de padrao
 totalVendas :: Int -> Int
 totalVendas 0 = vendas 0
 totalVendas n = vendas n + totalVendas(n-1)
+
+
 
 totalVendas2 :: Int -> Int
 totalVendas2 n | n == 0 = vendas 0
                | otherwise = vendas n + totalVendas2 (n-1)
 
+
 mediaSemanas n = fromIntegral(totalVendas n) / fromIntegral(n+1)
 
-
+-- quantas vendas foram iguais a s no intervalo de 0 a n
 vendasIguais :: Int -> Int -> Int 
 vendasIguais s n | n == 0 = sumTrue(vendas 0 == s)
                  | n == 1 = sumTrue(vendas 1 == s) + sumTrue(vendas 0 == s)
@@ -123,5 +129,15 @@ raizes a b c = ( r1, r2 )
                      delta = b^2 - 4*a*c
 
                      
+addEspacos :: Int -> String
+addEspacos n | n == 0 = ""
+             | n == 1 = " " ++ ""
+             | otherwise  = addEspacos(n-1) ++ " "
+
+paraDireita :: Int -> String -> String 
+paraDireita n s | n == 0 = s
+                | n == 1 = addEspacos(n) ++ s
+                | otherwise = addEspacos(n-1) ++ paraDireita(n-1)(s)
+
 
 
