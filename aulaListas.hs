@@ -32,10 +32,24 @@ drops :: Int -> [Int] -> [Int]
 drops n (a:as) | n == 1 = as
                | otherwise = drops(n-1) (as)
                
+type Pessoa = String
+type Livro = String
+type BancoDados = [(Pessoa, Livro)]
 
+baseExemplo :: BancoDados
+baseExemplo = [("Sergio","O Senhor dos Aneis"),("Andre", "Duna"),("Fernando", "Jonathan Strange"),("Fernando", "Duna")]
 
 --takeWhile 
 -- dropWhile 
 
 
+
+livros :: BancoDados -> Pessoa -> [Livro]
+livros bd p = [ y | (x,y) <- bd, x == p ]
+
+emprestimos :: BancoDados -> Livro -> [Pessoa]
+emprestimos bd l = [x | (x,y) <- bd, y == l ]
+
+--emprestado :: BancoDados -> Livro -> [Bool]
+--emprestado bd l = [y | (x,y)<- bd, (y == l) && (y /= "")]
 
