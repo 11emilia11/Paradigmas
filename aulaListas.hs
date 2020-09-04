@@ -68,8 +68,8 @@ emprestado bd l =  head [x /= "" | (x,y)<- bd, y == l]
 qtdEmprestimos :: BancoDados -> Pessoa -> Int
 qtdEmprestimos bd p = length [ x | (x,y) <- bd, x == p]
 
---emprestar :: BancoDados -> Pessoa -> Livro -> BandoDados
---emprestar bd p l = [ ]
+emprestar :: BancoDados -> Pessoa -> Livro -> BancoDados
+emprestar bd p l = (p,l):[(x,y) | (x,y) <- bd ]
 
--- devolver :: BandoDados -> Pessoa -> Livro -> BancoDados
-
+devolver :: BancoDados -> Pessoa -> Livro -> BancoDados
+devolver bd p l = ("",l):[(x,y) | (x,y) <- bd, (x /= p) || (y /= l)]
