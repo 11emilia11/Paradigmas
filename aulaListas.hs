@@ -62,9 +62,14 @@ livros bd p = [ y | (x,y) <- bd, x == p ]
 emprestimos :: BancoDados -> Livro -> [Pessoa]
 emprestimos bd l = [x | (x,y) <- bd, y == l ]
 
-emprestado :: BancoDados -> Livro -> [Bool]
-emprestado bd l =  [x /= "" | (x,y)<- bd, y == l]
+emprestado :: BancoDados -> Livro -> Bool
+emprestado bd l =  head [x /= "" | (x,y)<- bd, y == l]
+
+qtdEmprestimos :: BancoDados -> Pessoa -> Int
+qtdEmprestimos bd p = length [ x | (x,y) <- bd, x == p]
 
 --emprestar :: BancoDados -> Pessoa -> Livro -> BandoDados
---emprestar bd p l = [ 
+--emprestar bd p l = [ ]
+
+-- devolver :: BandoDados -> Pessoa -> Livro -> BancoDados
 
