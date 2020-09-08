@@ -23,3 +23,28 @@ mult10 z = (mult 10) z 1
 total :: (Int -> Int) -> Int -> Int
 total f 0 = f 0
 total f n = (f n) + (total f (n-1))
+
+--maxFun :: (Int -> Int) -> Int -> Int
+--maxFun f 0 = f 0
+--maxFun f n = maxi (maxFun f (n-1)) (f n)
+
+isCrescent :: (Int -> Int) -> Int -> Bool
+isCrescent f 0 = True
+isCrescent f n | f n >= f (n - 1) = isCrescent f (n-1)
+               | otherwise = False
+
+double :: [Int] -> [Int]
+double [] = []
+double (a:x) = (2*a) : double x
+
+
+sumList :: [Int] -> Int
+sumList [] = 0
+sumList (a:as) = a + sumList as
+
+
+pares l = filter even l
+
+
+
+
