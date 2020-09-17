@@ -39,7 +39,12 @@ avalia (Sub e1 e2) = avalia(e1) - avalia(e2)
 
 data ArvoreBin t = NilArv | No t (ArvoreBin t) (ArvoreBin t) deriving (Show)
 
+--data Pessoa = Adulto nome cpf idade lista | Crianca nome cpf idade
+--data Adulto = nome cpf idade
 
+
+--ehFilho :: Pessoa -> Pessoa -> bool
+--ehFilho ad fi = 
 
 
 
